@@ -66,20 +66,28 @@
 
 
 //
-function toWeirdCase(string){
-  arrList = string.split(" ")
-  newString = ""
-  for(let i = 0; i < arrList.length; i++){
-    let singleArr = arrList[i].split("")
-    for(let j = 0; j < singleArr.length; j++){
-      if(j%2 === 0){
-      newString += singleArr[j].toUpperCase()
-      } else {
-        newString += singleArr[j]
-      }
-    }
-    if(i !== arrList.length-1){newString += " "}
+// function toWeirdCase(string){
+//   arrList = string.split(" ")
+//   newString = ""
+//   for(let i = 0; i < arrList.length; i++){
+//     let singleArr = arrList[i].split("")
+//     for(let j = 0; j < singleArr.length; j++){
+//       if(j%2 === 0){
+//       newString += singleArr[j].toUpperCase()
+//       } else {
+//         newString += singleArr[j]
+//       }
+//     }
+//     if(i !== arrList.length-1){newString += " "}
+//   }
+//   return newString;
+// }
+// console.log(toWeirdCase("This"))
+function readOut(acrostic) {
+  let string = ''
+  for(let word of acrostic){
+    string += word.charAt(0)
   }
-  return newString;
+  return string
 }
-console.log(toWeirdCase("This"))
+console.log(readOut(['Jolly', 'Amazing', 'Courteous', 'Keen']))
