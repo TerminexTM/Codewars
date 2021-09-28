@@ -83,11 +83,29 @@
 //   return newString;
 // }
 // console.log(toWeirdCase("This"))
-function readOut(acrostic) {
-  let string = ''
-  for(let word of acrostic){
-    string += word.charAt(0)
+// function readOut(acrostic) {
+//   let string = ''
+//   for(let word of acrostic){
+//     string += word.charAt(0)
+//   }
+//   return string
+// }
+// console.log(readOut(['Jolly', 'Amazing', 'Courteous', 'Keen']))
+function swapVowelCase(str) {
+  let vowels = 'aeouiAEOUI'
+  let vowelsArr = vowels.split('')
+  let newStr = str.split('')
+  for(let i = 0; i < str.length; i++){
+    for(let j = 0; j < vowelsArr.length; j++){
+      if(str[i] === vowelsArr[j]){
+        if(str[i] === str[i].toUpperCase()){
+          newStr.splice(i,1,str[i].toLowerCase())
+        } else {
+          newStr.splice(i,1,str[i].toUpperCase())
+        }
+      }
+    }
   }
-  return string
+  return newStr.join('')
 }
-console.log(readOut(['Jolly', 'Amazing', 'Courteous', 'Keen']))
+console.log(swapVowelCase('Hi Im Dustin'));
